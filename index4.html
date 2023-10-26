@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://db.onlinewebfonts.com/c/312e1b153109eaeffbcd9227eaa6519b?family=Nimbus+Sans+Extd+D+W01+Light" rel="stylesheet">
+    <title>Document</title>
+    <script src="js/jquery3.7.1.js"></script>
+
+
+    <script type="text/javascript">
+        
+    (function($){
+    $(document).ready(function(){
+    var scrollToTop = function() {
+    // Get link
+    var link = $('#scrollUp'); // 제가 사용하는 Top Up 선택자를 link 변수로 선언
+    var header = $('#nav'); // 지금 적용하려는 헤더메뉴를  header 변수로 선언
+    link.hide();
+    var windowW = window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+ 
+    $(window).scroll(function() {
+    // If the user scrolled a bit (150 pixels) show the link in large resolutions
+    if (($(this).scrollTop() > 150)) {
+    link.fadeIn(100);
+    header.fadeOut(100); // 스크롤이 지정된 픽셀 아래로 내려오면 헤더가 사라짐
+    } else {
+    link.fadeOut(100);
+    header.fadeIn(100); // 스크롤이 지정된 범위를 벗어나면 다시 헤더가 나타남
+    }
+    });
+    };
+    scrollToTop();
+    $("#scrollUp").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 0);
+    });
+    });
+    })(jQuery);
+
+    $(document).ready(function() {
+    /* 1 */
+    $(window).scroll( function(){
+        /* 2 */
+        $('#main>img').each( function(i){
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            /* 3 */
+            if( bottom_of_window > bottom_of_object/1.5 ){
+                $(this).animate({'opacity':'1'},1000);
+            }
+        }); 
+    });
+});
+    $(function(){
+
+        $('.main-list>li').hover(
+        function(){$(this).find('.sub-list').stop().slideDown()},
+        function(){$(this).find('.sub-list').stop().slideUp()}
+    )
+
+    }) 
+    </script>
+    <style>
+        * {margin:0; padding:0;
+           box-sizing:border-box;}
+
+        #wrap {font-family: "Nimbus Sans Extd D W01 Light";
+               width:100%;}
+
+        #header>img {width:100%;}
+
+        #header h2 {position:absolute;
+                    right:30px;
+                    top:20px;
+                    border:3px solid black;
+                    border-radius:20px;
+                    text-align:center;
+                   width:120px;}
+
+        #header #nav {width:100%;
+                      height:150px;
+                      background:lightgrey;
+                     position:fixed;
+                     top:820px;
+                     left:0px;}
+
+        .main-list {list-style:none;
+                    width:610px;
+                    height:40px;
+                    position:absolute;
+                    left:650px;}
+
+        .main-list>li {float:left;}
+
+        .main-list>li>a {width:150px;
+                         height:40px;
+                         display:block;
+                         line-height:40px;
+                         text-decoration:none;
+                         color:black;
+                         font-size:20pt;
+                        text-align:center;}
+
+        .sub-list {list-style:none;
+                   display:none;
+                   position:relative;
+                  left:0px;
+                  top:-200px;}
+
+        .sub-list>li {text-align:center;}
+
+        .sub-list>li>a {color:black;
+                        display:block;
+                       text-decoration:none;
+                        background:white;
+                        line-height:40px;
+                       width:150px;
+                       height:40px;}
+
+        .sub-list>li>a:hover {background:lightgray;}
+
+        #main {position:relative;}
+
+        #main>img {width:100%;
+                   opacity:0;}
+
+        .slide {position:absolute;
+                left:42%;
+                bottom:200px;
+                width:300px;}
+
+        .text-effect {
+                      height:100%;
+                      display:inline-block;
+                      overflow:hidden;
+                      vertical-align:text-up;}
+
+        .text-effect .slideUp {
+            animation:slideUp 2s ease infinite;
+            display:block;
+        }
+
+        @keyframes slideUp {
+
+            0% {transform:translateY(100%);}
+            100% {transform:translateY(0px);}
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <img src="images/news1.jpg">
+            <h2>company</h2>
+
+            <nav id="nav">
+                <ul class="main-list">
+                    <li><a href="#">about</a>
+                        <ul class="sub-list">
+                            <li><a href="#">apple</a></li>
+                            <li><a href="#">apricot</a></li>
+                            <li><a href="#">australia</a></li>
+                            <li><a href="#">ant</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">map</a>
+                        <ul class="sub-list">
+                            <li><a href="#">man</a></li>
+                            <li><a href="#">monster</a></li>
+                            <li><a href="#">moon</a></li>
+                            <li><a href="#">maria</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">story</a>
+                        <ul class="sub-list">
+                            <li><a href="#">slide</a></li>
+                            <li><a href="#">shape</a></li>
+                            <li><a href="#">shoes</a></li>
+                            <li><a href="#">sound</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">contact</a>
+                        <ul class="sub-list">
+                            <li><a href="#">crunch</a></li>
+                            <li><a href="#">car</a></li>
+                            <li><a href="#">christmas</a></li>
+                            <li><a href="#">caramel</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="main">
+            <img src="images/news3.jpg">
+            <img src="images/news4.jpg">
+            <img src="images/news5.jpg">
+            <h1 class="slide">
+                <span class="text-effect"><span class="slideUp">work in progress </span></span>
+            </h1>
+        </div>
+
+        <div id="footer"></div>
+    </div>
+</body>
+</html>

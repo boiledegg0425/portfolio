@@ -3,261 +3,530 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/jquery3.7.1.js"></script>
-    <title>Document</title>
+    <script src="https://kit.fontawesome.com/4149e87681.js" crossorigin="anonymous"></script>
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <!--shake-->
+    
+    <title>강문정 포트폴리오</title>
+    <!--fade up효과-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
+    <script src="../js/jquery3.7.1.js"></script>
+
+    <script>
+        $(function(){
+
+            $('#contact_section ul li').on('click', function(){
+
+               $(this).addClass('xxx').siblings().removeClass('xxx');
+               })
+
+            $('#work_section ul li').on('click', function(){
+
+                $(this).addClass('bbb').siblings().removeClass('bbb');
+            })
+            
+        })
+
+    </script>
     <style>
-        * {margin:0; padding:0;}
+        html {scroll-behavior: smooth;}
 
-        #wrap {width:100%;}
+        * {margin:0; padding:0;
+           box-sizing:border-box;}
+        
 
-        nav {position:fixed;
-             z-index:100;
-             width:100%;
-             height:70px;
-             box-shadow:0px 0px 5px black;
-             background:white;}
+        /*--------한글 폰트--------------*/
+        @font-face {
+                font-family: 'ChosunSm';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.1/ChosunSm.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;
+                unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF;
+}
 
-        nav h1 {font-size:25pt;}
-
-        nav ul {list-style:none;
-                margin-top:-10px;
-                text-align:right;}
-
-        nav ul li {display:inline-block;
-                   font-size:15pt;
-                   margin-right:15px;}
-
-        nav ul li a {color:black;
-                     text-decoration:none;
-                     cursor:pointer;}
-
-        /*---------------섹션1-------------*/
-
-        #section1 {width:1500px;
-                   margin:0 auto;}
-
-        #section1 img {width:100%;}
-
-        /*---------------섹션2-------------*/
-        #section2 {margin:0 auto;
-                   width:1500px;
-                   height:580px;
-                   }
-
-        #section2 ul {list-style:none;
-                      width:1550px;
-                      display:flex;
-                      flex-flow:wrap;
-                      margin:50px 1.5px;}
-
-        #section2 ul li {margin:5px;}
-
-        #section2 ul li img {width:365px;
-                             height:220px;}
-
-        /*---------------섹션3-------------*/                     
-        #section3 {width:1500px;
-                   height:700px;
-                   margin:0 auto;}
-
-        #section3 h1 {margin-bottom:30px;}
-
-        #section3 #box {display:flex;
-                        margin-top:30px;}
-
-        #section3 #box div {width:370px;
-                            margin:2.5px;}
-
-        #section3 div img {width:370px;
-                           height:250px;}
-
-        #section3 #box div h3 {line-height:50px;
-                               margin-left:20px;}
-
-        #section3 #box div p {margin-left:20px;}
-
-        #section3 #box div>p:nth-child(4) {margin-top:30px;}
-
-
-        #section3 div button {width:370px;
-                              height:35px;
-                              border:none;
-                              background:rgb(204, 204, 204);
-                              border-radius:5px;
-                              position:relative;
-                              top:20px;
-                              cursor:pointer;}
-
-        /*---------------푸터---------------*/ 
-
-        footer {margin:0 auto;
-                width:1500px;
-                height:1400px;}
-
-        footer h1 {margin-bottom:30px;}
-
-        footer p {margin-bottom:30px;
-                  font-weight:bold;}
-
-        footer input {display:block;
-                      width:1490px;
-                      height:40px;
-                     margin-bottom:10px;
-                     border:1px solid gray;}
-
-        footer button {display:block;
-                       color:white;
-                       background:black;
-                       width:150px;
-                       height:30px;
-                       border:none;
-                       margin-top:30px;}
-
-        footer img {width:100%;
-                    margin-top:30px;}
-
-        @media screen and (max-width:910px) {
-
-            nav {width:100vw;}
-
-            #section1 {height:1010px;}
-
-            #section1 img {left:0px;
-                          width:100%;}
-
-            #section2 {width:100vw;
-                       height:1300px;}
-
-            #section2 ul {width:100vw;
-                          flex-flow:wrap;}
-
-            #section2 ul li img {width:440px;
-                                 height:280px;}
-
-            #section3 {width:100vw;
-                        height:1350px;}
-
-            #section3 #box {display:flex;
-                            flex-flow:wrap;
-                            width:1000px;
-                            height:1200px;}
-
-            #section3 #box div {width:448px;
-                                height:590px;}
-
-            #section3 #box div img {width:448px;
-                                    height:320px;}
-
-            #section3 div button {width:450px;}
-
-            footer {width:100vw;
-                    height:750px;}
-
-            footer input {width:100vw;}
+        /*---------영문 폰트--------------*/
+        @font-face {
+                    font-family:'Nanum Myeongjo'; 
+                    src:url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap');   
+                    font-style:normal;
+                    unicode-range:U+0041-005A, U+0061-007A, U+0030-0039;
+       }
+        
+        #wrap {background:rgb(233, 227, 216);
+               background-attachment:fixed;
+               width:100%;
+               height:4080px;
+               font-family:'ChosunSm', 'Nanum Myeongjo', 'Playfair Display', serif;
+;
         }
 
-        @media screen and (max-width:470px) {
+        #wrap .bgbg {width:100%;}
 
-            #section2 {height:2450px;}
 
-            #section2 ul li img {width:470px;}
+        #wrap .hi {position:relative;
+                   left:18%;
+                   top:-20%;
+                   font-size:30pt;
+                   width:1100px;}
 
-            #section3 {height:2650px;}
+        #wrap .web_text {position:absolute;
+                         right:300px;
+                         top:600px;
+                         text-align:right;
+                        font-size:25pt;}
 
-            #section3 #box {display:block;}
+        #wrap .waviy>span {font-size:60pt;
+                           color:white;
+                           text-shadow: -1px 0px orange, 0px 1px orange, 1px 0px orange, 0px -1px orange;
+        }
 
-            #section3 #box div {height:580px;}
-            
-            footer {width:100vw;}
+        .waviy {
+             position: relative;
+             left:18%;
+             top:-25%;
+              -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+            }
+            .waviy span {
+              position: relative;
+              display: inline-block;
+              color: #fff;
+              animation: waviy 2s infinite;
+              animation-delay: calc(.2s * var(--i));
+  
+            }
+            @keyframes waviy {
+              0%,40%,100% {
+                transform: translateY(0)
+              }
+              20% {
+                transform: translateY(-20px)
+              }
+            }
 
-            footer input {width:100vw;}
+
+        /*-------------nav---------------*/
+        #nav {
+             margin:0 auto;
+             width:1400px;
+             height:950px;
+             position:absolute;
+             top:0px;
+             left:145px;
+        }
+
+        #nav .name {position:fixed;
+                    z-index:100;
+                    margin:10px;}
+
+        #nav .ka1 {position:fixed;
+                   left:265px;
+                   top:10px;
+                   z-index:100;}
+    
+        #menu_section {position:fixed;
+                       right:200px;
+                       top:5px;
+                       z-index:100;}
+
+        #menu_section ul {list-style:none;
+                          text-align:right;}
+
+        #menu_section ul li {display:inline-block;
+                             margin:20px;
+                             font-weight:bold;
+                             font-size:18pt;
+                             transition:0.5s;
+                             text-shadow: -1px 0px #25d7ff, 0px 1px #25d7ff, 1px 0px #25d7ff, 0px -1px #25d7ff;}
+
+        #menu_section ul li:hover {border-bottom:1px solid black;}
+
+        #menu_section ul li a:hover {color:gray;
+                                     transition:0.3s;}
+
+        #menu_section ul li a {color:white;
+                               text-decoration:none;}
+
+        /*-------------main---------------*/
+        #main {
+              margin:0 auto;
+              width:1400px;
+              height:2430px;
+        }
+
+        #main #me_section {width:1400px;
+                            height:600px;
+                            display:flex;
+                            justify-content: space-around;
+        }
+
+        #main #me_section .self {height:300px;
+                                 width:500px;
+                                margin-top:100px;}
+
+        #main #me_section .self h1 {color:rgb(255, 255, 255);
+                                    text-shadow: -1px 0px #25d7ff, 0px 1px #25d7ff, 1px 0px #25d7ff, 0px -1px #25d7ff;
+                                    font-size:27pt;}
+
+        #main #me_section .self ul {list-style:none;
+                                    margin-left:200px;}
+
+        #main #me_section .self ul li {margin:30px;}
+
+        #main #me_section .ability {width:700px;
+                                    height:400px;
+                                    margin-top:100px;}
+
+        #main #me_section .ability>h1 {color:white;
+                                       font-size:27pt;
+                                       text-shadow: -1px 0px #25d7ff, 0px 1px #25d7ff, 1px 0px #25d7ff, 0px -1px #25d7ff;}
+
+        #main #me_section .ability ul {list-style:none;
+                                       width:500px;
+                                       margin:30px 150px;}
+
+        #main #me_section .ability ul li>h3 {color:white;
+                                             text-shadow: -1px 0px #25d7ff, 0px 1px #25d7ff, 1px 0px #25d7ff, 0px -1px #25d7ff;}
+
+        #main>hr {border:0.5px solid black;
+                  width:94%;
+                  margin:0 auto;}
+
+        #main #work_section {height:1500px;}
+
+        #main #work_section h1 {color:white;
+                                text-shadow: -1px 0px #25d7ff, 0px 1px #25d7ff, 1px 0px #25d7ff, 0px -1px #25d7ff;
+                                margin:30px 150px;
+                                font-size:27pt;}   
+
+        #work_section .work_text {margin-left:150px;}
+
+        #work_section .work_box {display:flex;
+                                 flex-flow:wrap;
+                                 height:1000px;
+                                 width:1300px;
+                                 margin:150px auto;
+                                }
+
+        #work_section .work_box2 {
+                                  width:645px;
+                                  height:500px;}
+
+        #work_section .work_box2>hr {width:94%;
+                                     margin:0 auto;}
+
+        #work_section .work_box2>h3 {margin:10px 30px;}
+
+        #work_section .work_box2>p {text-align:center;}
  
+        #work_section .work_box2>a>img {width:630px;
+                                        height:300px;
+                                        margin:50px 6px;
+                                        box-shadow:2px 2px 4px gray;}
+        
+
+        #main #contact_section {height:300px;}
+
+        #main #contact_section>h1 {color:white;
+                                   text-shadow: -1px 0px #25d7ff, 0px 1px #25d7ff, 1px 0px #25d7ff, 0px -1px #25d7ff;
+                                   margin:30px 150px;
+                                   font-size:27pt;}
+
+        #main #contact_section ul {list-style:none;
+                                   text-align:center;
+                                   height:25px;
+                                   position:relative;}
+
+        #main #contact_section ul li {display:inline-block;
+                                      height:25px;
+                                      width:100px;
+                                      cursor:pointer;}
+
+        #main #contact_section ul li.xxx>div {position:absolute;
+                                              left:440px;
+                                              top:80px;
+                                              height:100px;
+                                              width:500px;
+                                              display:block;}
+
+        #main #contact_section ul li>div {position:absolute;
+                                          height:0px;
+                                          display:none;}
+
+        #main #contact_section ul li div>p {margin-top:50px;}
+
+        #main #contact_section ul li div .notion {color:black;}
+
+        /*-------------footer---------------*/
+
+        #footer {width:100%;
+                 height:200px;}
+
+        #footer>hr {border:0.5px solid black;
+                    width:94%;
+                    margin:30px auto;}
+
+        #footer>p {text-align:center;
+                   margin-top:-70px;
+                   font-size:25pt;
+                   color:white;
+                   text-shadow: -1px 0px #25d7ff, 0px 1px #25d7ff, 1px 0px #25d7ff, 0px -1px #25d7ff;}
+
+        .face {animation:effect1 1s step-end infinite;}
+
+        #footer .parf {width:70px;
+                        position:relative;
+                        left:300px;
+                        top:-130px;}
+
+        #footer .parf2 {width:70px;
+                         position:relative;
+                        left:300px;
+                        top:-120px;}
+
+        #footer .ka2 {position:relative;
+                      left:300px;
+                      top:-140px;}
+        /*-------------키 프레임즈---------------*/
+
+        @keyframes effect1 {
+
+            50% {opacity:0;}
+        }
+        /*-------------미디어 쿼리 태블릿---------------*/
+
+        @media screen and (max-width:720px) {
+
+            #wrap {width:720px;
+                   height:3700px;}
+
+            #wrap .hi {left:50px;
+                      font-size:25pt;}
+
+            #wrap .web_text{text-align:center; 
+                            left:80px;
+                            top:700px;}
+
+            #nav {width:100%;
+                 left:0px;}
+
+            #nav #menu_section {left:210px;
+                                width:500px;}
+
+            #main {height:2500px;
+                   margin-top:550px;
+                   width:720px;}
+
+            #main #me_section {height:1200px;
+                               width:720px;
+                               flex-flow:wrap;}
+
+            #main #work_section ul {margin:150px 50px;}
+
+            #main #work_section ul li {font-size:20pt;
+                                       width:150px;
+                                       margin-bottom:10px;}
+
+            #main #work_section ul li.bbb div {left:150px;
+                                               width:500px;}
+
+            #main #work_section ul li div {left:150px;}
+
+            #main #work_section ul li div a>img {width:500px;
+                                                 height:300px;}
+
+            #main #work_section ul li div>p {text-align:center;
+                                             font-size:13pt;}
+            
+            #main #contact_section ul li.xxx>div {top:3050px;
+                                                  left:110px;}
+            
+            #footer .parf {left:100px;}
+        }
+
+        /*-------------미디어 쿼리 모바일---------------*/
+
+        @media screen and (max-width:420px) {
+
+            #wrap {width:420px;
+                   height:2800px;}
+
+            #nav {height:500px;
+                 }
+
+            
+            
+             
 
         }
     </style>
 </head>
 <body>
-   <div id="wrap">
-      <nav>
-        <h1>BR</h1>
-        <ul>
-            <li><a href="#">Project</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
+    <script> 
+        AOS.init(); 
+    </script>
+    <div id="wrap">  
+        <img src="images/bgbg.png" class="bgbg">
 
-      <section id="section1">
-        <img src="images/sky.jpg">
-      </section>
+          <p class="hi">hi<br>
+           i'm<br>
+           <br>
+           &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;'s website.<br>
+           저는 항상 성실하게 노력하는 신입 웹퍼블리셔 입니다.<br>
+           아직 경험은 없지만 새로운 곳에서 적응하며 일을 배우고 싶습니다.<br>
 
-      <section id="section2">
-        <h1>Projects</h1>
-        <ul>
-            <li><img src="images/집1.jpg"></li>
-            <li><img src="images/집2.jpg"></li>
-            <li><img src="images/집3.jpg"></li>
-            <li><img src="images/집4.jpg"></li>
-            <li><img src="images/집5.jpg"></li>
-            <li><img src="images/집6.jpg"></li>
-            <li><img src="images/집7.jpg"></li>
-            <li><img src="images/집8.jpg"></li>
-        </ul>
-      </section>
+           <div class="waviy">
+            <span style="--i:1">m</span>
+            <span style="--i:2">u</span>
+            <span style="--i:3">n</span>
+            <span style="--i:4">&nbsp;j</span>
+            <span style="--i:5">u</span>
+            <span style="--i:6">n</span>
+            <span style="--i:7">g</span>
+           </div>
+          </p>
+          <p class="web_text">
+           잘 부탁드립니다.<span class="face">😗</span>
+          </p>
 
-      <section id="section3">
-        <h1>Projects</h1>
-        <hr>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum doloremque distinctio dicta modi eius voluptate dignissimos incidunt assumenda deserunt. Vitae harum aliquam vero magnam ut excepturi maxime fugit. A, laborum!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quae iusto eligendi officiis numquam. Blanditiis, debitis! Nostrum, eius in dolor, modi, sed facilis aspernatur tenetur consequatur corporis quod nisi delectus?
-        </p>
-
-        <div id="box">
-          <div>
-            <img src="images/사람1.jpg">
-            <h3>person1</h3>
-            <p>CEO & Founder</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi in id cumque quis quibnumquam? Sunt laborum repellendus voluptate!</p>
-            <button>Contact</button>
-          </div>
-
-          <div>
-            <img src="images/사람2.jpg">
-            <h3>person2</h3>
-            <p>CEO & Founder</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi in id cumque quis quibnumquam? Sunt laborum repellendus voluptate!</p>
-            <button>Contact</button>
-          </div>
-
-          <div>
-            <img src="images/사람3.jpg">
-            <h3>person3</h3>
-            <p>CEO & Founder</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi in id cumque quis quibnumquam? Sunt laborum repellendus voluptate!</p>
-            <button>Contact</button>
-          </div>
-
-          <div>
-            <img src="images/사람4.jpg">
-            <h3>person4</h3>
-            <p>CEO & Founder</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi in id cumque quis quibnumquam? Sunt laborum repellendus voluptate!</p>
-            <button>Contact</button>
-          </div>
+       <div id="nav">
+        <p class="name">mun jung gang</p>
+        <img src="https://kairosoft.net/gallery/deco/images/deco_65.gif" class="ka1">
+          <section id="menu_section">
+              <ul>
+                <li><a href="#nav">Home</a></li>
+                <li><a href="#me_section">About me</a></li>
+                <li><a href="#work_section">Work</a></li>
+                <li><a href="#contact_section">Contact</a></li>
+              </ul>
+          </section>
+          
         </div>
-      </section>
-      
-      <footer>
-        <h1>Contact</h1>
+
+       <div id="main">
+        <section id="me_section">
+            <div class="self" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                <h1>About me</h1>
+                <ul>
+                    <li>- 강문정</li>
+                    <li>- gang mun jung</li>
+                    <li>- 1993.04.25</li>
+                    <li>- 취미 : 맛있는 커피 찾기</li>
+                    <li>- 성실하게 출근 하겠습니다!!</li>
+                </ul>
+            </div>
+
+            <div class="ability" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+             <h1>Ability</h1>
+             <ul>
+                <li>
+                    <h3>- HTML</h3>
+                    코드를 작성하여 웹페이지의 기초 토대를 다지고 반응형 페이지를 제작할 수 있습니다.
+                </li>
+             </ul>
+
+             <ul>
+                <li>
+                    <h3>- CSS</h3>
+                    css의 선택자들과 css의 속성들을 활용하여 웹페이지의 상세 디자인을 작업할 수 있습니다.
+                </li>
+             </ul>
+
+             <ul>
+                <li>
+                    <h3>- JAVA SCRIPT/<br>
+                          JQUERY</h3>
+                    자바스크립트의 조건문, 반복문, 함수와 변수들을 활용하여 폼 검증이나 동적인 페이지효과를 구현할 수 있습니다.
+                </li>
+             </ul>
+
+             <ul>
+                <li>
+                    <h3>- Photoshop, Illustrator</h3>
+                    다양한 이미지 편집과 합성이 가능합니다.
+                </li>
+             </ul>
+            </div>
+        </section>
+
         <hr>
-        <p>Lets get touch and talk about your next project</p>
-        <input type="text" placeholder="Name"></input>
-        <input type="text" placeholder="Email"></input>
-        <input type="text" placeholder="subject"></input>
-        <input type="text" placeholder="comment"></input>
-        <button>SEND MASSAGE</button>
-        <img src="images/마을.jpg">
-      </footer>
-   </div>
+
+        <section id="work_section">
+            <h1>Work</h1>
+            <p class="work_text">제가 공부하며 제작한 홈페이지들 입니다. 이미지를 클릭하면 링크로 이동합니다. </p>
+            <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" class="work_box">
+            
+                    <div class="work_box2">
+                        <hr>
+                        <h3>- page1</h3>
+                        <a href="index2.html" target="_blank"><img src="images/메인1.jpeg"></a>
+                        <p>배경에 영상을 넣어 동적인 느낌을 줌</p>
+                    </div>
+            
+                    <div class="work_box2">
+                        <hr>
+                        <h3>- page2</h3>
+                        <a href="index0.html" target="_blank"><img src="images/메인2.JPG"></a>
+                        <p>이미지를 사용해 갤러리 느낌의 페이지 제작</p>
+                    </div>
+                              
+                    <div class="work_box2">
+                        <hr>
+                        <h3>- page3</h3>
+                        <a href="index3.html" target="_blank"><img src="images/메인3.JPG"></a>
+                        <p>1번의 구조를 조금 바꿔 이미지에 효과를 줌</p>
+                    </div>
+                             
+                    <div class="work_box2">
+                        <hr>
+                        <h3>- page4</h3>
+                        <a href="index4.html" target="_blank"><img src="images/메인4.jpeg"></a>
+                        <p>스크롤 이동시 사진이 부드럽게 나타남</p>
+                    </div>
+                         
+            </div>
+        </section>
+
+        <section id="contact_section">
+            <h1>Contact</h1>
+              <ul>
+                <li class="xxx">phone&emsp;&emsp;|
+                    <div>
+                        <p>010 . 2032 . 9290</p>
+                    </div>
+                </li>
+                
+                <li>e-mail&emsp;&emsp;|
+                    <div>
+                        <p>answjd930425@gmail.com</p>
+                    </div>
+                </li>
+
+                <li>notion
+                    <div>
+                        <p>준비 중 입니다~</p>
+                    </div>
+                </li>
+              </ul>
+        </section>
+       </div>
+
+       <div id="footer">
+         <hr>
+         <img src="images/파르페.png" class="parf">
+         <img src="images/파르페2.png" class="parf2">
+         <img src="https://kairosoft.net/gallery/deco/images/deco_175.gif" class="ka2">
+         <p>thank you!<span class="face">: )</span></p>
+       </div>
+    </div>
 </body>
 </html>
+
+
+<!-- <div data-aos="fade-up" data-aos-duration="1000">
+    <a href="https://tartan-tilapia-490.notion.site/599cf87cc30a42e78c22f3bdef0520bc?pvs=4" target="_blank" class="notion">노션 포트폴리오</a>
+-->

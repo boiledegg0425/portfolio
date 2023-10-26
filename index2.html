@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery3.7.1.js"></script>
+      
+    <script>
+        $(function(){
+             
+            $('.list_2>li').hover(
+                
+                function(){$('.sub_list').stop().slideDown()},
+                function(){$('.sub_list').stop().slideUp()}
+            )
+        })
+    </script>
+    <style>
+        * {margin:0; padding:0;}
+
+        #wrap {width:100%;}
+
+        /*-------------헤더--------------*/
+        header {background:white;
+                height:180px;}
+
+        header>h2 {position:relative;
+                   left:50px;
+                   top:150px;}
+
+        .list_1, .list_2 {list-style:none;}
+
+        .list_1 {text-align:right;}
+
+        .list_1>li, .list_2>li {display:inline-block;}
+
+        .list_1>li {width:80px;}
+
+        .list_1>li>a {color:black;
+                      text-decoration:none;}
+
+        .list_2 {text-align:center;
+                 font-weight:bold;
+                 width:800px;
+                  position:absolute;
+                  left:500px;
+                 top:150px;}
+
+        .list_2>li {float:left;
+                   position:relative;}
+
+        .list_2>li>a {
+                     width:150px;
+                     height:30px;
+                     line-height:30px;
+                     display:block;
+                     color:black;
+                     text-decoration:none;}
+
+        .sub_list {width:150px;
+                   height:120px;
+                  list-style:none;
+                  z-index:30;
+                  display:none;
+                  position:absolute;
+                  left:0px;
+                  top:30px;
+                  background:gray;
+                  }
+
+        .sub_list>li {z-index:30;}
+
+        .sub_list>li>a:hover {color:white;}
+
+        .sub_list>li>a {width:150px;
+                      height:30px;
+                      line-height:30px;
+                      background:gray;
+                      color:black;
+                      text-decoration:none;
+                     }
+
+        
+        
+        .sub_list>li:hover {color:white;}
+
+        /*-------------메인--------------*/
+        main {color:white;}
+
+        main>video {width:100%;}
+
+        #box {position:absolute;
+              left:200px;
+              top:550px;}
+
+        #box>p:nth-child(1) {font-size:80pt;}
+
+        #box>p:nth-child(2) {color:rgb(226, 226, 226);}
+
+        #box>button {border:1px solid white;
+                     background:none;
+                     color:white;
+                     width:400px;
+                     height:30px;
+                     margin-top:50px;}
+
+        /*-------------뉴스 칸--------------*/
+        #recent_news {height:600px;}
+
+        #recent_news>h2 {text-align:center;
+                         padding-top:120px;}
+
+        #recent_news>ul {width:1460px;
+                         margin:0 auto;
+                         padding-top:80px;
+                         list-style:none;
+                         display:flex;
+                         justify-content:space-between;}
+
+        #recent_news img {width:350px;
+                          height:150px;
+                          margin-right:20px;}
+
+        #recent_news p {width:350px;}
+
+        /*-------------푸터--------------*/
+        footer {background:rgb(39, 40, 41);
+                height:200px;
+                color:gray;}
+
+        #box2 {width:90%;
+               margin:0 auto;
+              padding-top:30px;}
+
+        #box2>p {font-size:10pt;
+                 margin-top:10px;}
+
+        #box2>ul {list-style:none;
+                  text-align:right;}
+
+        #box2>ul>li {display:inline-block;}
+
+        #box2>hr {border:1px solid gray;}
+
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h2>DCODLAB</h2>
+            <ul class="list_1">
+                <li><a href="#">contact</a></li>
+                <li><a href="#">help</a></li>
+                <li><a href="#">login</a></li>
+                <li><a href="#">join</a></li>
+                <li><a href="#">sitemap</a></li>
+            </ul>
+
+            <ul class="list_2">
+                <li><a href="#">DPARTMENT</a>
+                    <ul class="sub_list">
+                        <li><a href="#">DPARTMENT1</a></li>
+                        <li><a href="#">DPARTMENT2</a></li>
+                        <li><a href="#">DPARTMENT3</a></li>
+                        <li><a href="#">DPARTMENT4</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">GALLERY</a>
+                    <ul class="sub_list">
+                        <li><a href="#">GALLERY1</a></li>
+                        <li><a href="#">GALLERY2</a></li>
+                        <li><a href="#">GALLERY3</a></li>
+                        <li><a href="#">GALLERY4</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">YOUTUBE</a>
+                    <ul class="sub_list">
+                        <li><a href="#">YOUTUBE1</a></li>
+                        <li><a href="#">YOUTUBE2</a></li>
+                        <li><a href="#">YOUTUBE3</a></li>
+                        <li><a href="#">YOUTUBE4</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">COMMUNITY</a>
+                    <ul class="sub_list">
+                        <li><a href="#">COMMUNITY1</a></li>
+                        <li><a href="#">COMMUNITY2</a></li>
+                        <li><a href="#">COMMUNITY3</a></li>
+                        <li><a href="#">COMMUNITY4</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">LOCATION</a>
+                    <ul class="sub_list">
+                        <li><a href="#">LOCATION1</a></li>
+                        <li><a href="#">LOCATION2</a></li>
+                        <li><a href="#">LOCATION3</a></li>
+                        <li><a href="#">LOCATION4</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+
+        <main>
+            <video src="images/visual.mp4" autoplay loop></video>
+            <div id="box">
+               <p>INNOVATION</p>
+               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem dolores optio vel,<br>
+                   modi corporis quas laboriosam quisquam explicabo ad corrupti, provident cum rerum est iste quaerat distinctio adipisci, totam officia?</p>
+               <button>view detail</button>
+            </div>
+        </main>
+
+        <div id="recent_news">
+           <h2>RECENT NEWS</h2>
+           <ul>
+            <li><img src="images/news1.jpg">
+                <h4>Lorem ipsum dolor</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi consequatur excepturi ducimus porro sed nisi! Perferendis sequi quam voluptate reiciendis ipsa quae libero ducimus suscipit cumque quibusdam, deleniti nisi nemo.</p>
+            </li>
+            <li><img src="images/news2.jpg">
+                <h4>Lorem ipsum dolor</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi consequatur excepturi ducimus porro sed nisi! Perferendis sequi quam voluptate reiciendis ipsa quae libero ducimus suscipit cumque quibusdam, deleniti nisi nemo.</p>
+            </li>
+            <li><img src="images/news3.jpg">
+                <h4>Lorem ipsum dolor</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi consequatur excepturi ducimus porro sed nisi! Perferendis sequi quam voluptate reiciendis ipsa quae libero ducimus suscipit cumque quibusdam, deleniti nisi nemo.</p>
+            </li>
+            <li><img src="images/news4.jpg">
+                <h4>Lorem ipsum dolor</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi consequatur excepturi ducimus porro sed nisi! Perferendis sequi quam voluptate reiciendis ipsa quae libero ducimus suscipit cumque quibusdam, deleniti nisi nemo.</p>
+            </li>
+           </ul>
+        </div>
+
+        <footer>
+            <div id="box2">
+                <h3>DCODLAB</h3>
+                <ul class="list_3">
+                    <li>Policy</li>
+                    <li>Terms</li>
+                    <li>Family Site</li>
+                    <li>Sitemap</li>
+                </ul>
+                <hr>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet dolores tempora aperiam.<br>
+                    TEL : 031-123-4567 / C.P : 010-1111-2345
+                </p>
+                <p>2020 DOCDELAB ⓒ copyright all right reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
