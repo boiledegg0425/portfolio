@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://db.onlinewebfonts.com/c/312e1b153109eaeffbcd9227eaa6519b?family=Nimbus+Sans+Extd+D+W01+Light" rel="stylesheet">
+    <script src="js/jquery3.7.1.js"></script>
+    <title>sophie buhai</title>
+
+    <script>
+        $(function(){
+
+            $('.nav-list>li').on('click', function(){
+
+                 $(this).find('.sub-box').css('display', 'block');
+                 $(this).siblings().children('.sub-box').css('display', 'none');
+            })
+
+            $('#slide img:gt(0)').hide();
+
+               setInterval(function(){
+                  $('#slide img:first-child').hide()
+                       .next('img').show()
+                       .end().appendTo('#slide');}, 3000);
+
+            $('#neck>ul>li').hover(
+                function(){$(this).find('.name').css({'opacity':1})},
+                function(){$(this).find('.name').css({'opacity':0})}
+            )
+
+            $('#ring>ul>li').hover(
+                function(){$(this).find('#bigbox').css({'opacity':1})},
+                function(){$(this).find('#bigbox').css({'opacity':0})}
+            )
+        })
+    </script>
+    <style>
+        * {margin:0; padding:0;}
+
+        #wrap {
+            width:100%;
+            font-family: 'Oranienbaum', serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Oranienbaum&display=swap');
+
+        #nav {
+            width:100%;
+            height:50px;
+        }
+
+        ul li {
+            list-style:none;
+        }
+
+        .logo {
+            font-weight:bold;
+            font-size:18pt;
+            width:200px;
+            margin:0 auto;
+        }
+
+        .nav-list>li {
+            width:150px;
+            height:25px;
+            text-align:center;
+            line-height:25px;
+            float:left;
+            cursor:pointer;
+        }
+
+        .nav-list>li:hover {
+            text-decoration:underline;
+            text-underline-offset:5px;
+            text-decoration-thickness:1px;
+        }
+
+        .nav-list>li.active div {
+            width:600px;
+            height:300px;
+            position:absolute;
+            left:0px;
+        }
+
+        .nav-list>li div {
+            position:absolute;
+            left:0px;
+            display:none;
+        }
+
+        .sub-box>ul>li:hover {
+            text-decoration:underline;
+            text-underline-offset:5px;
+            text-decoration-thickness:1px;
+        }
+
+        .sub-box>ul>li {
+            text-align:left;
+            margin:10px 20px;
+        }
+
+        #main {
+            width:100%;
+        }
+
+        #slide {
+            width:500px;
+            height:750px;
+            margin:50px auto;
+            overflow:hidden;
+        }
+
+        #slide>img {
+            width:500px;
+        }
+
+        #text-box {
+            width:100%;
+            height:25px;
+            overflow:hidden;
+            position:absolute;
+            left:0px;
+            top:870px;
+        }
+
+        #text-flow {
+            height:25px;
+            width:3000px;
+            animation:textflow 7s linear infinite;
+        }
+
+        #text-flow>p {
+            float:left;
+            width:500px;
+            line-height:25px;
+        }
+
+        @keyframes textflow {
+            0% {transform:translateX(0)}
+            100% {transform:translateX(-500px)}
+        }
+
+        #neck {
+            width:1600px;
+            margin:100px auto;
+        }
+
+        #neck>ul>li {
+            display:inline-block;
+            margin:20px;
+        }
+
+        #neck>ul>li>img {
+            width:350px;
+            transition:0.5s;
+        }
+
+        #neck>ul>li>p {
+            text-align:center;
+        }
+
+        .name {
+            color:white;
+            position:relative;
+            top:300px;
+            width:350px;
+            height:30px;
+            line-height:30px;
+            text-align:center;
+            opacity:0;
+            backdrop-filter:blur(6px);
+        }
+
+        #ring {
+            width:1600px;
+            margin:0 auto;
+            position:relative;
+        }
+
+        #ring>ul>li {
+            display:inline-block;
+            margin:20px;
+            height:550px;
+            
+        }
+
+        #ring>ul>li>p {
+            text-align:center;
+            
+        }
+
+        #ring>ul>li>img {
+            width:350px;
+            transition:0.5s;
+        }
+
+        #ring>ul>li>a>img {
+            width:350px;
+        }
+
+        .blackbox {
+            width:350px;
+            height:526px;
+            background:black;
+            opacity:0.5;
+            position:relative;
+            top:-30px;
+
+        }
+
+        .name2 {
+            position:relative;
+            top:270px;
+            width:350px;
+            height:30px;
+            line-height:30px;
+            color:white;
+            z-index:10;
+            text-align:center;
+        }
+
+        #bigbox {
+            position:relative;
+            left:0px;
+            top:-550px;
+            height:525px;
+            opacity:0;
+            transition:0.5s;
+        }
+
+        /* ----------미디어 쿼리 태블릿------------- */
+        @media screen and (max-width:720px) {
+
+            #nav {
+                width:720px;
+            }
+
+            .nav-list>li {
+                margin-right:28px;
+            }
+
+            #main {
+                width:720px;
+            }
+
+            #slide {
+                width:400px;
+                margin:100px auto;
+            }
+
+            #slide>img {
+                width:400px;
+            }
+
+            #neck {
+                width:720px;
+                height:1200px;
+            }
+
+            .name {
+                width:300px;
+            }
+
+            #neck>ul>li>img {
+                width:300px;
+            }
+
+            #neck>ul>li {
+                width:300px;
+            }
+
+            #ring {
+                width:720px;
+            }
+
+            #ring>ul>li {
+                width:300px;
+                height:450px;
+            }
+
+            #ring>ul>li>img {
+                width:300px;
+            }
+
+            #bigbox {
+                top:-475px;
+                width:300px;
+                height:450px;
+            }
+
+            .blackbox {
+                width:300px;
+                height:450px;
+            }
+
+            .name2 {
+                width:300px;
+            }
+                
+        }
+
+        /* ----------미디어 쿼리 모바일------------- */
+
+        @media screen and (max-width:420px) {
+
+            .nav-list>li {
+                margin-right:-50px;
+            }
+
+            .logo {
+                margin-left:120px;
+            }
+
+            #main {
+                width:420px;
+            }
+
+            #neck {
+                width:420px;
+                height:700px
+            }
+
+            .name {
+                width:150px;
+            }
+
+            #neck>ul>li>img {
+                width:150px;
+            }
+
+            #neck>ul>li {
+                width:150px;
+            }
+
+            #ring {
+                width:420px;
+            }
+
+            #ring>ul>li {
+                width:150px;
+                height:225px;
+            }
+
+            #ring>ul>li>img {
+                width:150px;
+            }
+
+            #bigbox {
+                top:-250px;
+                width:148px;
+                height:223px;
+            }
+
+            .blackbox {
+                top:-30px;
+                width:150px;
+                height:227px;
+            }
+
+            .name2 {
+                font-size:10pt;
+                width:150px;
+                top:120px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <nav id="nav">
+           <h2 class="logo">SOPHIE BUHAI</h2>
+           <ul class="nav-list">
+              <li class="active">jewelry
+                 <div class="sub-box">
+                    <ul>
+                        <li>earrings</li>
+                        <li>necklaces</li>
+                        <li>bracelets</li>
+                        <li>rings</li>
+                        <li>baby</li>
+                    </ul>
+                 </div>
+              </li>
+
+              <li>hair</li>
+
+              <li>objects</li>
+
+              <li>materials
+                <div class="sub-box">
+                    <ul>
+                        <li>18K gold</li>
+                        <li>pearls</li>
+                        <li>lapis</li>
+                        <li>onyx</li>
+                        <li>jade</li>
+                        <li>quartz</li>
+                        <li>jasper</li>
+                    </ul>
+                 </div>
+              </li>
+           </ul>
+        </nav>
+
+        <main id="main">
+            <div id="slide">
+                <img src="https://www.sophiebuhai.com/cdn/shop/products/SB_Quartz-Audrey-Earrings_57020014_WEB_CROP_720x.jpg?v=1649280436">
+                <img src="https://www.sophiebuhai.com/cdn/shop/products/58250026_crop_720x.jpg?v=1678750771">
+                <img src="https://www.sophiebuhai.com/cdn/shop/products/16_720x.jpg?v=1677863782">
+                <img src="https://www.sophiebuhai.com/cdn/shop/products/20220221_DBaum_SophieBuhai0140_720x.jpg?v=1649185781">
+            </div>
+
+            <div id="text-box">
+                <div id="text-flow">
+                    <p>Free shipping in jewelry and hair orders over $500.&emsp;</p>
+                    <p>Free shipping in jewelry and hair orders over $500.&emsp;</p>
+                    <p>Free shipping in jewelry and hair orders over $500.&emsp;</p>
+                    <p>Free shipping in jewelry and hair orders over $500.&emsp;</p>
+                    <p>Free shipping in jewelry and hair orders over $500.&emsp;</p>
+                    <p>Free shipping in jewelry and hair orders over $500.&emsp;</p>
+                </div>
+            </div>
+
+            <div id="neck">
+                <h3>necklaces</h3>
+                <ul>
+                    <li>
+                        <p class="name">Small Circle Link Necklace</p>
+                        <img src="https://www.sophiebuhai.com/cdn/shop/products/Small_Circle_Link_Necklace_720x.jpg?v=1569226793">
+                        <p>$650</p>
+                    </li>
+
+                    <li>
+                        <p class="name">Petite Heart Pendant</p>
+                        <img src="https://www.sophiebuhai.com/cdn/shop/products/SB_Gold-Petite-Heart-Pendant57000030_WEB_BW_720x.jpg?v=1649286737">
+                        <p>$650</p>
+                    </li>
+
+                    <li>
+                        <p class="name">Jasper Grecian Collar</p>
+                        <img src="https://www.sophiebuhai.com/cdn/shop/products/20230202_Lightwork_SophieBuhai23044_RT_720x.jpg?v=1677777687">
+                        <p>$650</p>
+                    </li>
+
+                    <li>
+                        <p class="name">Onyx Boule Collar</p>
+                        <img src="https://www.sophiebuhai.com/cdn/shop/files/20230824_DBaum_MijeongParkWhiteMermaidMediumNecklace_0139_FINAL_720x.jpg?v=1695750629">
+                        <p>$650</p>
+                    </li>
+                </ul>
+                <p>>>more</p>
+            </div>
+
+            <div id="ring">
+                <h3>rings</h3>
+                <ul>
+                    <li>
+                        <img src="https://www.sophiebuhai.com/cdn/shop/products/20220902_DBaum_SophieBuhai9968_720x.jpg?v=1677681844">
+                        <p>$550</p>
+                        <div id="bigbox">
+                            <p class="name2">Quartz Division Ring</p>
+                            <div class="blackbox"></div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <img src="https://www.sophiebuhai.com/cdn/shop/products/0023_315640-A9-012-2_1_1_720x.jpg?v=1679596321">
+                        <p>$550</p>
+                        <div id="bigbox">
+                            <p class="name2">Jade Donut Ring</p>
+                            <div class="blackbox"></div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <img src="https://www.sophiebuhai.com/cdn/shop/products/20220902_DBaum_SophieBuhai10054_720x.jpg?v=1663973453">
+                        <p>$550</p>
+                        <div id="bigbox">
+                            <p class="name2">Onyx Division Ring</p>
+                            <div class="blackbox"></div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <img src="https://www.sophiebuhai.com/cdn/shop/products/R22-R03-LA_5.jpg?v=1649184924">
+                        <p>$550</p>
+                        <div id="bigbox">
+                            <p class="name2">Lapis Donut Ring</p>
+                            <div class="blackbox"></div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <img src="https://www.sophiebuhai.com/cdn/shop/products/Ring_2_000746450009_CROP2.jpg?v=1641946444">
+                        <p>$550</p>
+                        <div id="bigbox">
+                            <p class="name2">Chalcedony Nautilus Ring</p>
+                            <div class="blackbox"></div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <img src="https://www.sophiebuhai.com/cdn/shop/products/SB_Onyx-Large-Shell-Ring_91490029_WEB.jpg?v=1683738764">
+                        <p>$550</p>
+                        <div id="bigbox">
+                            <p class="name2">Onyx Shell Ring</p>
+                            <div class="blackbox"></div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <img src="https://www.sophiebuhai.com/cdn/shop/products/SB_Bagel-Rings_91400033_WEB.jpg?v=1649106574">
+                        <p>$550</p>
+                        <div id="bigbox">
+                            <p class="name2">Stacking Ring Set Of Two</p>
+                            <div class="blackbox"></div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <img src="https://www.sophiebuhai.com/cdn/shop/products/SB_Silver-Ball-Ring91440009_WEB.jpg?v=1649114618">
+                        <p>$550</p>
+                        <div id="bigbox">
+                            <p class="name2">Ball Ring</p>
+                            <div class="blackbox"></div>
+                        </div>
+                    </li>
+                </ul>
+                <p>>>more</p>
+            </div>
+        </main>
+
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>

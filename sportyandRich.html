@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery3.7.1.js"></script>
+    <!-- <link rel="prefetch" fetchpriority="low" as="font" type="font/woff2" href="https://fonts.shopifycdn.com/futura/futura_n4.df36ce3d9db534a4d7947f4aa825495ed740e410.woff2?h1=c3BvcnR5YW5kcmljaC5jb20&amp;hmac=e0cb686eaa4cb51b5bb96cc42b1cdca6701db6ad79a915fdea04a50a62ff12a7" crossorigin> -->
+    <link href="https://fonts.cdnfonts.com/css/futura-now-headline?styles=82973" rel="stylesheet">    
+    <title>스크롤하면 나오는 메뉴바</title>
+    <script>
+        $(function(){
+            let headerbar = $('.header_box').offset().top;
+
+            $(window).scroll(function(){
+                if($(window).scrollTop() > headerbar) {
+                    $('.header_box').css({position: 'sticky', top: '0px'});
+                    $('.header_box').css('background-color', 'white');
+                    $('header h1').css('color', 'black');
+                    $('.main_menu li a').css('color', 'black');
+                    $('.menu_icon').css('color', 'black');
+                } else {
+                    $('.header_box').css({position: 'sticky', top: '0px'});
+                    $('.header_box').css('background-color', 'transparent');
+                    $('header h1').css('color', 'white');
+                    $('.main_menu li a').css('color', 'white');
+                    $('.menu_icon').css('color', 'white');
+                }
+            })
+        });
+
+        $(function(){
+            $('header').hover(
+                function(){$('.main_menu li a, .main_menu li span').css('color', 'black')},
+                function(){$('.main_menu li a, .main_menu li span').css('color', 'white')}
+            )
+        })
+
+        $(function(){
+            $('header').hover(
+                function(){$('.soon').css('color', 'white')},
+                function(){$('.soon').css('color', 'white');}
+            )
+        })
+    </script>
+    <style>
+        * {
+            margin:0; padding:0;
+            box-sizing:border-box;
+            /* font-family: 'Futura', sans-serif; */
+            font-family: 'Futura Now Headline', sans-serif;                                  
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: var(--font-body-weight);
+            letter-spacing: var(--font-body-base-letter-spacing); 
+            font-style: var(--font-body-style);
+            -webkit-font-smoothing: antialiased;
+            /* --font-body-style: lighter; */
+        }
+
+        :root {
+            --font-body: Futura, sans-serif;
+            --font-body-weight: 400;
+            --font-body-style: normal;
+            --font-body-base-letter-spacing: 0.04em;
+            --font-body-bold-weight:700;
+            --font-body-base-size: 12px;
+        }
+
+        #wrap {
+            width:100%;
+        }
+
+        .banner {
+            background:#0b9247;
+            width:100%;
+            height:34px;
+            text-align:center;
+            color:white;
+        }
+
+        .banner p {
+            font-size: var(--font-body-base-size);
+            font-style: var(--font-body-style);
+            line-height:34px;
+        }
+
+        .header_box {
+            display:block;
+            transition:0.3s;
+        }
+
+        header {
+            background-color:transparent;
+            width:100%;
+            height:60px;
+            text-align:center;
+            position:sticky;
+            top:0;
+            transition:0.3s;
+            backface-visibility: hidden;
+        }
+
+        header:hover {
+            background:white;
+        }
+
+        header:hover h1{
+            color:black !important;
+        }
+
+        header h1 {
+            color:white;
+            position:absolute;
+            left:44.5%;
+            top:10px;
+        }
+
+        .main_menu_box {
+            list-style:none;
+            width:600px;
+            height:60px;
+        }
+
+        .main_menu {
+            display:flex;
+            list-style:none;
+        }
+
+        .main_menu li {
+            cursor:pointer;
+            margin-left:20px;
+            margin-top:20px;
+        }
+
+        .main_menu li a {
+            color:white;
+            font-size: 13px;
+            text-decoration:none;
+            display:inline-block;
+        }
+
+        .main_menu li span {
+            color:white;
+            /* border:1px solid red; */
+        }
+
+        .main_menu li a:after {
+            content:"";
+            display:block;
+            border-bottom:1px solid black;
+            transition:transform 0.25s ease-in-out;
+            transform:scaleX(0);
+        }
+
+        .main_menu li a:hover:after {
+            transform:scaleX(1);
+        }
+
+        .main_menu li a:after {
+            transform-origin: bottom right;
+        }
+
+        .main_menu li a:hover:after {
+            transform-origin: bottom left;
+        }
+
+        .menu_icon {
+            width:10px;
+            height:10px;
+            display:inline-block;
+            margin-left:3px;
+        }
+
+        .menu_icon svg{
+            width:100%;
+            height:100%;
+            display:block;
+        }
+
+        .soon {
+            background:#0b9247;
+            padding-left:6px;
+            padding-right:6px;
+            padding-top:3px;
+            padding-bottom:3px;
+            font-size:10px;
+            color:white;
+            
+        }
+
+        .space {
+            height:2000px;
+            background:rgb(235, 235, 235);
+            margin-top:-60px;
+        }
+
+        .image__inner, .image__img {
+            display:block;
+            max-width:100%;
+            width:100%;
+            height:auto;
+        }
+
+        .image__inner {
+            height:100%
+        }
+
+        footer {
+            background:#0b9247;
+            height:430px;
+        }
+
+        .foot_container {
+            width:1510px;
+            height:400px;
+            margin-left:50px;
+            padding-top:50px;
+            display:grid;
+            grid-template-columns:500px 220px 220px 220px;
+            grid-template-rows: 250px 250px 250px 250px;
+            column-gap: 120px;
+            row-gap:50px;
+        }
+
+        .footer_box ul {
+            list-style:none;
+        }
+
+        .footer_box ul li {
+            cursor:pointer;
+            color:white;
+        }
+
+        .footer_box h4 {
+            color:white;
+            font-weight: lighter;
+            font-size:22px;
+            margin-bottom:30px;
+        }
+
+        .foot_box1 ul li{
+            margin-bottom:30px;
+        }
+
+        .flag_box {
+            font-size:12px;
+        }
+
+        .flag_box {
+            display:inline-block;
+            margin-left:3px;
+        }
+
+        .flag_icon svg{
+            width:10px;
+            height:10px;
+            display:inline-block;
+            line-height:10px;
+        }
+
+        .foot_listBox li{
+            font-size:11.5px;
+            height:35px;
+            line-height:35px;
+        }
+
+        .foot_listBox li:hover {
+            text-decoration:underline;
+        }
+
+        .email_box {
+            border:1px solid white;
+            border-radius:2px;
+            width:450px;
+        }
+
+        .in_email {
+            width:350px;
+            height:50px;
+            background:none;
+            border:none;
+        }
+
+        input::placeholder {
+            color:white;
+            font-size:15px;
+            margin-left:20px;
+        }
+
+        .btn {
+            background:none;
+            border:none;
+            color:white;
+            text-decoration:underline;
+            cursor:pointer;
+            margin-left:20px;
+        }
+
+        .foot_box5 {
+            color:white;
+            font-size:7pt;
+            height:70px;
+            grid-column: 1 / 5;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="banner" style="font-family: 'Futura';">
+            <p>Coming Soon: Our Equestrian Drop will launch on Monday, October 14th</p>
+        </div>
+
+        <div class="header_box">
+            <header>
+                <div class="main_menu_box">
+                    <ul class="main_menu">
+                        <li><a href="#">Equestrian Drop</a> <span class="soon">new</span></li>
+
+                        <li><a href="#">Core Collection</a></li>
+
+                        <li><a href="#">Women</a>
+                            <span class="menu_icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.875 7.438 12 17.563 22.125 7.438" stroke="currentColor" stroke-width="2"></path>
+                                </svg>
+                            </span>
+                        </li>
+
+                        <li><a href="#">Men</a>
+                            <span class="menu_icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.875 7.438 12 17.563 22.125 7.438" stroke="currentColor" stroke-width="2"></path>
+                                </svg>
+                            </span>
+                        </li>
+
+                        <li><a href="#">Collection</a>
+                            <span class="menu_icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.875 7.438 12 17.563 22.125 7.438" stroke="currentColor" stroke-width="2"></path>
+                                </svg>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <h1>Sporty & rich</h1>
+            </header>
+        </div>
+
+        <div class="space">
+        <div class="image__inner">
+            <img alt class="image__img" loading="lazy" width="4492" height="2995" 
+                 src="//sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=320" 
+                 srcset="//sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=700 700w, 
+                 //sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=750 750w, 
+                 //sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=800 800w, 
+                 //sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=850 850w, 
+                 //sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=900 900w, 
+                 //sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=950 950w, 
+                 //sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=1000 1000w, 
+                 //sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=1100 1100w, 
+                 //sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=1200 1200w, 
+                 //sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=1300 1300w, 
+                 //sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=1400 1400w, 
+                 //sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=1500 1500w, 
+                 //sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=1600 1600w, 
+                 //sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=1800 1800w, 
+                 //sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=2000 2000w, 
+                 //sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=2200 2200w, 
+                 //sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=2400 2400w, 
+                 //sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=2600 2600w, 
+                 //sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=2800 2800w, 
+                 //sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=3000 3000w, 
+                 //sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=3500 3500w, 
+                 //sportyandrich.com/cdn/shop/files/desk2_639de9b7-b77b-47a7-a9c5-272abc8b93f8.jpg?v=1725372447&amp;width=4000 4000w" 
+                 sizes="100vw" onload="javascript: this.closest('.image').classList.add('loaded')">
+        </div>
+       </div>
+
+       <footer>
+            <div class="foot_container">
+                <div class="footer_box foot_box1">
+                    <h4>Join the Club</h4>
+                    <ul>
+                        <li class="email_box"><input type="email" placeholder="Enter your email." class="in_email"><input type="submit" value="Subscribe" class="btn"></li>
+                        <li><h4>Country/Region</h4></li>
+                        <li class="flag_box">South Korea (KRW)
+                            <span class="flag_icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.875 7.438 12 17.563 22.125 7.438" stroke="currentColor" stroke-width="2"></path>
+                                </svg>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer_box foot_box2">
+                    <h4>Sporty & Rich</h4>
+                    <ul class="foot_listBox">
+                        <li>Home</li>
+                        <li>Lookbooks</li>
+                        <li>NYC Flagship Store</li>
+                        <li>Spa</li>
+                        <li>Book</li>
+                    </ul>
+                </div>
+
+                <div class="footer_box foot_box3">
+                    <h4>Community</h4>
+                    <ul class="foot_listBox">
+                        <li>About</li>
+                        <li>Wellness Club</li>
+                        <li>Mood</li>
+                        <li>Playlist</li>
+                        <li>Instagram</li>
+                    </ul>
+                </div>
+
+                <div class="footer_box foot_box4">
+                    <h4>Support</h4>
+                    <ul class="foot_listBox">
+                        <li>Track Your Order</li>
+                        <li>Shipping</li>
+                        <li>Returns</li>
+                        <li>FAQ</li>
+                        <li>Contact</li>
+                        <li>Accessibility Statement</li>
+                    </ul>
+                </div>
+
+                <div class="footer_box foot_box5">
+                    <p>
+                        ©2024, Sporty & Rich. All rights reserved.<br>
+                        see our terms of use and privacy notice.
+                    </p>
+                </div>
+            </div>
+       </footer>
+    </div>
+</body>
+<script>
+    
+</script>
+</html>
