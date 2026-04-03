@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://db.onlinewebfonts.com/c/72c75860d89e91a517dfb1e7d308c180?family=Courier+New" rel="stylesheet">
+    <script src="js/jquery3.7.1.js"></script>
+    <title>munjung WEB</title>
+    <script>
+        $(function(){
+
+            $('#portfolio>ul>li').hover(
+                function(){$(this).find('.porttitle').css({'opacity':1})},
+                function(){$(this).find('.porttitle').css({'opacity':0})}
+            )
+        })
+    </script>
+    <style>
+        @import url(https://db.onlinewebfonts.com/c/72c75860d89e91a517dfb1e7d308c180?family=Courier+New);
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: "Courier New";
+            font-weight: 400;
+            scroll-behavior: smooth;
+        }
+
+        #time {
+            position: fixed;
+        }
+
+        #time::before {
+            content: "";
+            display: inline-block;
+            width: 9px;
+            height: 9px;
+            background: rgb(34, 200, 255);
+            margin-right: 5px;
+            border-radius: 50%;
+        }
+
+        #container {
+            width: 87%;
+            display: flex;
+            margin: 0 auto;
+        }
+
+        header {
+            width: 35%;
+            position: sticky;
+            top: 60px;
+            height: 900px;
+            border: 1px solid black;
+        }
+
+        .mebox>p {
+            text-align: center;
+        }
+
+        .meicon {
+            margin-left: 130px;
+        }
+
+        #mainmenu {
+            margin-top:20px;
+        }
+
+        #mainmenu>ul {
+            margin-left: 20px;
+            width:100px;
+        }
+
+        #mainmenu>ul>li>a {
+            color: black;
+            text-decoration: none;
+            font-size: 15pt;
+        }
+
+        .folderimage {
+            width:80px;
+        }
+
+        #mainmenu>ul>li>a:hover {
+            background: rgb(34, 200, 255);
+        }
+
+        /* -----------------본문----------------- */
+        main {
+            width: 65%;
+            height: 400vh;
+        }
+
+        .tophead {
+            border:1px dashed black;
+            border-bottom:none;
+            height: 100vh;
+        }
+
+        .profile {
+            border:1px dashed black;
+            border-bottom:none;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto auto;
+            grid-template-areas:
+                "title"
+                "f1"
+                "f2"
+                "f3";
+            align-content:start;
+        }
+
+        .profile h1 { 
+            grid-area:title;
+            margin:0;
+            padding-bottom:50px;
+        }
+
+        .protitle {
+            padding-bottom:5px;
+        }
+
+        .protext {
+            width:800px;
+            padding-left:14px;
+        }
+
+        .subdash::before {
+            content:"";
+            display:inline-block;
+            margin-right:5px;
+            width:9px;
+            height:9px;
+            border-radius:50%;
+            background: rgb(34, 200, 255);
+        }
+
+        .file1 { grid-area:f1; }
+        .file2 { grid-area:f2; }
+        .file3 { grid-area:f3; }
+
+        .file1,
+        .file2,
+        .file3 {
+            margin-left:20px;
+            margin-bottom:50px;
+        }
+
+        .icons {
+            width:300px;
+        }
+
+        .portfolio {
+            border:1px dashed black;
+            border-bottom:none;
+            height: 100vh;
+        }
+
+        .portfolio h1 {
+            padding-bottom:30px;
+        }
+
+        .portfolio>ul {
+            padding-left:25px;
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            row-gap:20px;
+        }
+
+        .portfolio>ul>li {
+            width:500px;
+            height:268px;
+        }
+
+        .portfolio>ul>li>a>img {
+            width: 500px;
+            border:1px solid black;
+        }
+
+        .porttitle {
+            border:1px solid black;
+            font-size:15pt;
+            width:500px;
+            position:relative;
+            top:-140px;
+            text-align:center;
+            color:white;
+            opacity:0;
+            backdrop-filter:blur(6px);
+        }
+
+        .portaaa {
+            text-decoration:none;
+        }
+
+        .footer {
+            border:1px dashed black;
+            height: 100vh;
+        }
+
+        /* ---------------mobile----------------- */
+        @media (max-width: 402px) {
+
+            #container {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            header {
+                width: 100%;
+                position: static;
+                border:none;
+                padding-top:15px;
+            }
+
+            .mebox {
+                margin-top:40px;
+            }
+
+            .meicon {
+                width:200px;
+                margin-left:100px;
+            }
+
+            #mainmenu {
+                width:100%;
+                position:absolute;
+                top:30px;
+            }
+
+            #mainmenu > ul {
+                list-style:none;
+                margin-left:0;
+                display:flex;
+            }
+
+            #mainmenu > ul > li > a {
+                font-size:12pt;
+                margin-right:30px;
+                text-align:center;
+            }
+
+            main {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .tophead, .profile, .portfolio, .footer {
+                border:none;
+            }
+
+            .file1, .file2, .file3 {
+                margin-left:10px;
+            }
+
+            .portfolio {
+                height:auto;
+            }
+
+            .portfolio>ul {
+                grid-template-columns: 1fr;
+                margin-left:10px;
+            }
+
+            .portfolio > ul > li > a > img {
+                width:383px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <p id="time">00:00:00</p>
+        <header>
+            <div class="mebox">
+                <h1>welcome to my web portfolio.</h1>
+                <img class="meicon" src="./images/미모티콘(나).png">
+                <p>안녕하세요.</p>
+                <p>저는 신입 웹퍼블리셔 강문정 입니다.</p>
+                <p>저의 웹페이지에 오신걸 환영합니다.</p> 
+            </div>
+
+            <div id="mainmenu">
+                <ul>
+                    <li><a href="#tophead">main</a></li>
+                    <li><a href="#profile">profile</a></li>
+                    <li><a href="#portfolio">portfolio</a></li>
+                    <li><a href="#footer">footer</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <main>
+            <div class="tophead" id="tophead">
+                <h1>/main</h1>
+                <p>간단한 자기소개나 나를 보여줄 수 있는 부분</p>
+            </div>
+
+            <div class="profile" id="profile">
+                <h1>/profile</h1>
+                <div class="file1">
+                    <p class="protitle" style="font-size:18pt;"><span class="subdash"></span>About me</p>
+                    <p class="protext"> 저의 전공은 원래 패션디자인 이었습니다.<br>
+                        회사에서 웹을 알게 되면서 제가 배웠던 디자인과 퍼블리싱이 비슷한 점이<br>
+                        많다고 느껴졌고 좀 더 깊게 공부하고 싶다는 생각이 들어 공부를 시작하게 되었습니다.<br>
+                        전혀 다른 분야일 수 있지만 저의 경험들이 이 분야에서 도움이 될거라 생각합니다.<br>
+                        웹 퍼블리셔를 이제 시작하는 단계이고, 아직 경험은 없지만<br>
+                        새로운 곳에서 사람들과 만나고 좋은 경험을 더 쌓고 싶습니다.<br>
+                        앞으로 많은 것을 이 곳에 채워 나가며 일 하고싶습니다. 감사합니다.<br>
+                    </p>
+                    <p style="color:red;">/E-mail : mun930425@gmail.com</p>
+                </div>
+
+                <div class="file2">
+                    <p class="protitle" style="font-size:18pt;"><span class="subdash"></span>Education</p>
+                    <p class="protext">유한대학교 패션디자인과 졸업 2016</p>
+                    <p class="protext" style="margin-bottom:20px;">UIUX 웹디자인 & 웹퍼블리셔 실무자 양성과정 수료 2023</p>
+
+                    <p class="protitle" style="font-size:18pt;"><span class="subdash"></span>Certificate</p>
+                    <p class="protext">GTQ(그래픽기술자격) 1급 2급</p>
+                    
+                    <p class="protext">ITQ(정보기술자격) 한글, 엑셀, 파워포인트 A등급</p>
+                    <p class="protext">운전면허 2종</p>
+                </div>
+
+                <div class="file3">
+                    <p class="protitle" style="font-size:18pt;"><span class="subdash"></span>HTML</p>
+                    <p class="protext" style="margin-bottom:20px;"> 코드를 작성하여 웹페이지의 기초 토대를 다지고 반응형 페이지를 제작할 수 있습니다.</p>
+                    
+                    <p class="protitle" style="font-size:18pt;"><span class="subdash"></span>CSS</p>
+                    <p class="protext" style="margin-bottom:20px;">css의 선택자들과 css의 속성들을 활용하여 웹페이지의 상세 디자인을 작업할 수 있습니다.</p>
+                    
+                    <p class="protitle" style="font-size:18pt;"><span class="subdash"></span>JAVA SCRIPT / JQUERY</p>
+                    <p class="protext" style="margin-bottom:20px;">자바스크립트의 조건문, 반복문, 함수와 변수들을 활용하여 폼 검증이나 동적인 페이지효과를 구현할 수 있습니다.</p>
+                    
+                    <p class="protitle" style="font-size:18pt;"><span class="subdash"></span>Photoshop, Illustrator</p>
+                    <p class="protext" style="margin-bottom:20px;">다양한 이미지 편집과 합성이 가능합니다.</p>
+                    
+                    <p class="protitle" style="font-size:18pt;"><span class="subdash"></span>Figma</p>
+                    <p class="protext" style="margin-bottom:20px;">기본적인 툴을 이용해 편집 가능합니다.</p>
+                    <img class="icons" src="./images/아이콘.png">
+                </div>
+            </div>
+
+            <div id="portfolio" class="portfolio">
+                <h1>/portfolio</h1>
+                <ul>
+                    <li>
+                        <a class="portaaa" href="sophie.html">
+                            <img src="./images/메인5.png">
+                            <p class="porttitle">Go</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="portaaa" href="sportyandRich.html" target="_blank">
+                            <img src="images/메인2.png">
+                            <p class="porttitle">Go</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="portaaa" href="temburins.html" target="_blank">
+                            <img src="images/메인3.png">
+                            <p class="porttitle">Go</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="portaaa" href="RhodePage.html" target="_blank">
+                            <img src="images/메인1.png">
+                            <p class="porttitle">Go</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="footer" class="footer">
+                <h1>/footer</h1>
+            </div>
+        </main>
+    </div>
+    <script>
+        function updateClock() {
+            const now = new Date();
+
+            let hours = String(now.getHours()).padStart(2, '0');
+            let minutes = String(now.getMinutes()).padStart(2, '0');
+            let seconds = String(now.getSeconds()).padStart(2, '0');
+
+            const clockElement = document.getElementById('time');
+            clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+
+</html>
