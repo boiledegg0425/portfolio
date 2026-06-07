@@ -19,6 +19,13 @@
     <style>
         @import url(https://db.onlinewebfonts.com/c/72c75860d89e91a517dfb1e7d308c180?family=Courier+New);
 
+        @font-face {
+            font-family:'Bianzhidai';
+            src:url('https://raw.githubusercontent.com/boiledegg0425/portfolio/main/font/bianzhidai_noBG-Pearl.woff') format('woff');
+            font-weight: normal;
+            font-style:normal;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -47,6 +54,8 @@
             width: 87%;
             display: flex;
             margin: 0 auto;
+            background:#f9f9f9;
+            /* 일단 이 배경화면은 이렇게 냅두고 나중에 전체로 적용하기 */
         }
 
         header {
@@ -98,6 +107,12 @@
             border:1px dashed black;
             border-bottom:none;
             height: 100vh;
+        }
+
+        .tophead>h1 {
+            font-size:90pt;
+            font-family: 'Bianzhidai';
+            text-align:center;
         }
 
         .profile {
@@ -170,12 +185,13 @@
             list-style: none;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            row-gap:20px;
+            row-gap:100px;
         }
 
         .portfolio>ul>li {
-            width:500px;
-            height:268px;
+            width:502px;
+            height:269px;
+            border:1px solid red;
         }
 
         .portfolio>ul>li>a>img {
@@ -280,7 +296,7 @@
         <p id="time">00:00:00</p>
         <header>
             <div class="mebox">
-                <h1>welcome to my web portfolio.</h1>
+                <!-- <h1>welcome to my web portfolio.</h1> -->
                 <img class="meicon" src="./images/미모티콘(나).png">
                 <p>안녕하세요.</p>
                 <p>저는 신입 웹퍼블리셔 강문정 입니다.</p>
@@ -299,8 +315,7 @@
 
         <main>
             <div class="tophead" id="tophead">
-                <h1>/main</h1>
-                <p>간단한 자기소개나 나를 보여줄 수 있는 부분</p>
+                <h1>welcome to my web portfolio</h1>
             </div>
 
             <div class="profile" id="profile">
@@ -357,24 +372,39 @@
                             <img src="./images/메인5.png">
                             <p class="porttitle">Go</p>
                         </a>
+                        <p>-sophie buhai website<br>
+                            좋아하는 주얼리 브랜드의 홈페이지를 만들어 봤습니다.
+                        </p>
                     </li>
+
                     <li>
                         <a class="portaaa" href="sportyandRich.html" target="_blank">
                             <img src="images/메인2.png">
                             <p class="porttitle">Go</p>
                         </a>
+                        <p>-sporty and rich website<br>
+                            옷 브랜드의 홈페이지를 따라서 만들어 봤습니다.
+                        </p>
                     </li>
+
                     <li>
                         <a class="portaaa" href="temburins.html" target="_blank">
                             <img src="images/메인3.png">
                             <p class="porttitle">Go</p>
                         </a>
+                        <p>-이 브랜드 없어져서 다시 다른걸로 만들어야겠다.<br>
+                            브랜드의 이미지를 제가 생각하는 느낌으로 홈페이지를 만들어 봤습니다.
+                        </p>
                     </li>
+
                     <li>
                         <a class="portaaa" href="RhodePage.html" target="_blank">
                             <img src="images/메인1.png">
                             <p class="porttitle">Go</p>
                         </a>
+                        <p>-rhode website<br>
+                            브랜드 rhode의 홈페이지를 따라서 만들어 봤습니다.
+                        </p>
                     </li>
                 </ul>
             </div>
