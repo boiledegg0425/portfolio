@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rhode</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        #container {
+            width:95%;
+            height:100%;
+            /* border:1px dotted red; */
+            margin:0 auto;
+        }
+
+        header {
+            background:rgb(217, 217, 217);
+            height:45px;
+            border-radius:10px;
+            margin-top:15px;
+            margin-bottom:15px;
+        }
+
+        .free {
+            text-align:center;
+            line-height:45px;
+        }
+
+        main {
+            height:2500px;
+            background:lightpink;
+        }
+
+        .mainImg img {
+            width:100%;
+        }
+
+        .mainMenu {
+            position:absolute;
+            top:75px;
+            left:0;
+            width:100%;
+            padding:0 50px;
+            transition:transform 0.4s ease;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            box-sizing: border-box;
+        }
+
+        .menu-left,
+        .menu-center,
+        .menu-right {
+            flex:1;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .menu-left {
+            justify-content:flex-start;
+        }
+
+        .menu-right {
+            justify-content:flex-end;
+        }
+
+        .mainMenu.hide {
+            transform:translateY(-150px);
+        }
+
+        .mainMenu ul {
+            list-style:none;
+            display:flex;
+            gap:20px;
+            padding:0;
+            margin:0;
+        }
+
+        .mainLogo {
+            color:white;
+            font-size:40pt;
+            white-space: nowrap;
+        }
+
+        .mainMenu ul li {
+            font-size:18pt;
+            color:white;
+            /* mix-blend-mode:difference; */
+        }
+
+        .itemPic {
+            height:600px;
+            border:1px solid red;
+            margin-top:30px;
+            display:flex;
+            justify-content:space-between;
+        }
+
+        .product-card {
+            position:relative;
+            border-radius:15px;
+            height:581px;
+            width:500px;
+            overflow:hidden;
+        }
+
+        .product-card > a > img {
+            width:100%;
+            border-radius:15px;
+        }
+
+        .hoverMain {
+            cursor:pointer;
+        }
+
+        .hoverMain img {
+            opacity:1;
+            position:relative;
+            z-index:1;
+        }
+
+        .hoverHide {
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:2;
+            pointer-events: none;
+        }
+
+        .hoverHide img {
+            width:500px;
+            border-radius:15px;
+            opacity:0;
+            transition:opacity 1s ease;
+        }
+
+        .hover-btn {
+            z-index:4;
+            width:450px;
+            height:40px;
+            border:none;
+            color:white;
+            font-size:15pt;
+            background:grey;
+            border-radius:50px;
+            position:relative;
+            left:25px;
+            top:-60px;
+            transform:translateY(70px);
+            transition:transform 1s cubic-bezier(0.22, 1, 0.36, 1), 
+                       opacity 0.5s ease-in-out;
+            opacity:0;
+        }
+
+        .hover-btn.show {
+            transform:translateY(0);
+            opacity:1;
+        }
+
+        footer {
+            height:100px;
+            background:lightgrey;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <p class="free">Free Shipping On Us Orders Over $45</p>
+        </header>
+
+        <main>
+            <div class="mainImg">
+                <img src="https://www.rhodeskin.com/cdn/shop/files/HP-hero-desktop-summer_2480x.jpg?v=1752447034">
+            </div>
+
+            <div class="mainMenu">
+                <div class="menu-left">
+                    <ul class="menu1">
+                        <li>shop</li>
+                        <li>about</li>
+                        <li>futures</li>
+                    </ul>
+                </div>
+
+                <div class="menu-center">
+                    <h1 class="mainLogo">rhode</h1>
+                </div>
+
+                <div class="menu-right">
+                    <ul class="menu2">
+                        <li>search</li>
+                        <li>account</li>
+                        <li>cart (0)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="itemPic">
+                <div class="product-card item1">
+                    <a class="hoverMain">
+                        <img src="https://www.rhodeskin.com/cdn/shop/files/Lemontini-product-card_1_2480x.jpg?v=1751405888">
+                    </a>
+
+                    <div class="hoverHide">
+                       <img src="https://www.rhodeskin.com/cdn/shop/files/lemontini-hover_2480x.jpg?v=1750973791">
+                    </div>
+
+                    <button class="hover-btn">BUY LIP TINT - $20.00</button>
+                </div>
+
+                <div class="product-card item2"> 
+                    <a class="hoverMain">
+                        <img src="https://www.rhodeskin.com/cdn/shop/files/tanlines-product-card_2480x.jpg?v=1751407339">
+                    </a>
+
+                    <div class="hoverHide">
+                        <img src="https://www.rhodeskin.com/cdn/shop/files/tanline-hover_2480x.jpg?v=1751046129">
+                    </div>
+
+                    <button class="hover-btn">BUY BLUSH - $20.00</button>
+                </div>
+
+                <div class="product-card item3">
+                    <a class="hoverMain">
+                        <img src="https://www.rhodeskin.com/cdn/shop/files/mist-product-card_2480x.jpg?v=1749337193">
+                    </a>
+
+                    <div class="hoverHide">
+                        <img src="https://www.rhodeskin.com/cdn/shop/files/mist-hover_2480x.jpg?v=1748989422">
+                    </div>
+
+                    <button class="hover-btn">BUY GLAZING MIST - $20.00</button>
+                </div>
+            </div>
+        </main>
+        
+        <footer></footer>
+    </div>
+
+    <script>
+    const menu = document.querySelector('.mainMenu');
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > lastScrollY) {
+            menu.classList.add('hide');
+        } else {
+            menu.classList.remove('hide');
+        }
+        lastScrollY = window.scrollY;
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const products = document.querySelectorAll('.product-card');
+
+        products.forEach(product => {
+            const mainImg = product.querySelector('.hoverMain img');
+            const hoverImg = product.querySelector('.hoverHide img');
+            const hoverBtn = product.querySelector('.hover-btn');
+
+            product.querySelector('.hoverMain').addEventListener('mouseover', () => {
+                hoverImg.style.opacity = '1';
+                hoverBtn.classList.add('show');
+            });
+
+            product.querySelector('.hoverMain').addEventListener('mouseout', () => {
+                hoverImg.style.opacity = '0';
+                hoverBtn.classList.remove('show');
+            });
+        });
+    });
+</script>
+</body>
+</html>
